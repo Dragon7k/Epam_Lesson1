@@ -26,7 +26,6 @@ public class SphereFileReader {
             result = Files.lines(Paths.get(filepath))
                     .filter(sphereValidation::isValidFileLines)
                     .collect(Collectors.toCollection(ArrayList::new));
-            System.out.println("prochitano: "+result);
             logger.info("result of readLinesFromFile is {}", result);
         } catch (IOException e) {
             logger.error("IOException in read from file method with path {}:", e.getMessage());
