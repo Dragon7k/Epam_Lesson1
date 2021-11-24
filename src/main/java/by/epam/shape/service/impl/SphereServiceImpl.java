@@ -22,4 +22,11 @@ public class SphereServiceImpl implements SphereService {
     public boolean isSphere(Sphere sphere) {
         return (sphere != null ? sphere.getRadius() : 0) > 0;
     }
+
+    @Override
+    public double volumeRatio(Sphere sphere, double axis) {
+        double sphereSegmentVolume1 = Math.PI*Math.pow((sphere.getRadius()-Math.abs(axis)),2)*(sphere.getRadius()-(sphere.getRadius()-Math.abs(axis))/3);
+
+        return sphereSegmentVolume1/(volume(sphere));
+    }
 }

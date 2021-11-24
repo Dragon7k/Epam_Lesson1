@@ -6,5 +6,5 @@ public interface SphereService {
     double surfaceArea(Sphere sphere);
     double volume(Sphere sphere);
     boolean isSphere(Sphere sphere);
-    //double volumeRatio(Sphere sphere, double axis);
+    double volumeRatio(Sphere sphere, double axis);
 }
