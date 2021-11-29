@@ -1,14 +1,21 @@
 package by.epam.shape.entity;
 
+import by.epam.shape.observer.Observable;
+import by.epam.shape.observer.Observer;
+import by.epam.shape.observer.SphereEvent;
+import by.epam.shape.observer.SphereObserver;
 import by.epam.shape.util.IdGenerator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Objects;
 
-public class Sphere {
+public class Sphere implements Observable {
+    private static final Logger logger = LogManager.getLogger();
     private int id;
     private double radius;
     private Point center;
-
+    private Observer observer = new SphereObserver();
     public Sphere(double radius, Point center) {
         this.id= IdGenerator.generateId();
         this.radius = radius;
@@ -29,6 +36,10 @@ public class Sphere {
 
     public void setCenter(Point center) {
         this.center = center;
+    }
+
+    public int getId() {
+        return id;
     }
 
     @Override
@@ -57,4 +68,23 @@ public class Sphere {
         return sb.toString();
     }
 
+    @Override
+    public void attach(Observer observer) {
+        if(observer!=null){
+            this.observer=observer;
+        }
+    }
+
+    @Override
+    public void detach() {
+        this.observer=null;
+    }
+
+    @Override
+    public void notifyObserver() {
+        if(observer!=null){
+            SphereEvent sphereEvent = new SphereEvent(this);
+            this.observer.parametersChange(sphereEvent);
+        }
+    }
 }

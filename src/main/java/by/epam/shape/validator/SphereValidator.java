@@ -1,7 +1,6 @@
 package by.epam.shape.validator;
 
+@FunctionalInterface
 public interface SphereValidator {
-    boolean isValidFile(String filepath);
     boolean isValidFileLines(String filepath);
-
 }
