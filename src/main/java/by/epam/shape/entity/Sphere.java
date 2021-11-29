@@ -11,7 +11,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.Objects;
 
 public class Sphere implements Observable {
-    private static final Logger logger = LogManager.getLogger();
+
     private int id;
     private double radius;
     private Point center;
@@ -28,6 +28,7 @@ public class Sphere implements Observable {
 
     public void setRadius(double radius) {
         this.radius = radius;
+        notifyObserver();
     }
 
     public Point getCenter() {
@@ -36,6 +37,7 @@ public class Sphere implements Observable {
 
     public void setCenter(Point center) {
         this.center = center;
+        notifyObserver();
     }
 
     public int getId() {
