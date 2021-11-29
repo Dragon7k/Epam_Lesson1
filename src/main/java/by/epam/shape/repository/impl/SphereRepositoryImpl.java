@@ -30,7 +30,7 @@ public class SphereRepositoryImpl implements SphereRepository {
     }
 
     @Override
-    public boolean add(Sphere sphere) {
+    public boolean addSphere(Sphere sphere) {
        return sphereList.add(sphere);
     }
 
@@ -40,37 +40,37 @@ public class SphereRepositoryImpl implements SphereRepository {
     }
 
     @Override
-    public boolean addAll(List<Sphere> sourceList) {
+    public boolean addAllSpheres(List<Sphere> sourceList) {
         return sphereList.addAll(sourceList);
     }
 
     @Override
-    public boolean remove(Sphere sphere) {
+    public boolean removeSphere(Sphere sphere) {
         return sphereList.remove(sphere);
     }
 
     @Override
-    public boolean removeAll(List<Sphere> sourceList) {
+    public boolean removeAllSpheres(List<Sphere> sourceList) {
         return sphereList.removeAll(sourceList);
     }
 
     @Override
-    public Sphere get(int index) {
+    public Sphere getSphere(int index) {
         return sphereList.get(index);
     }
 
     @Override
-    public Sphere set(int index, Sphere sphere) {
+    public Sphere setSphere(int index, Sphere sphere) {
         return sphereList.set(index,sphere);
     }
 
     @Override
-    public List<Sphere> query(SphereSpecification sphereSpecification) {
+    public List<Sphere> querySphere(SphereSpecification sphereSpecification) {
         return sphereList.stream().filter(sphereSpecification::specify).collect(Collectors.toList());
     }
 
     @Override
-    public List<Sphere> sort(Comparator<? super Sphere> comparator) {
+    public List<Sphere> sortSphere(Comparator<? super Sphere> comparator) {
         return sphereList.stream().sorted(comparator).collect(Collectors.toList());
     }
 }

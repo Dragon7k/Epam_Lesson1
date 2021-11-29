@@ -15,6 +15,7 @@ public class SphereServiceImpl implements SphereService {
         if(sphere==null){
             throw new SphereException("Sphere is null");
         }
+        logger.info("surface: {}",4*Math.PI*Math.pow(sphere.getRadius(),2));
         return 4*Math.PI*Math.pow(sphere.getRadius(),2);
     }
 
@@ -23,6 +24,7 @@ public class SphereServiceImpl implements SphereService {
         if(sphere==null){
             throw new SphereException("Sphere is null");
         }
+        logger.info("volume: {}", 4*Math.PI*Math.pow(sphere.getRadius(),3)/3);
         return 4*Math.PI*Math.pow(sphere.getRadius(),3)/3;
     }
 

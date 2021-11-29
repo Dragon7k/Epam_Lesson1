@@ -6,21 +6,21 @@ import java.util.Comparator;
 import java.util.List;
 
 public interface SphereRepository {
-    boolean add(Sphere sphere);
+    boolean addSphere(Sphere sphere);
 
     List<Sphere> getAllSphere();
 
-    boolean addAll(List<Sphere> sphereList);
+    boolean addAllSpheres(List<Sphere> sphereList);
 
-    boolean remove(Sphere sphere);
+    boolean removeSphere(Sphere sphere);
 
-    boolean removeAll(List<Sphere> sphereList);
+    boolean removeAllSpheres(List<Sphere> sphereList);
 
-    Sphere get(int index);
+    Sphere getSphere(int index);
 
-    Sphere set(int index, Sphere ball);
+    Sphere setSphere(int index, Sphere ball);
 
-    List<Sphere> query(SphereSpecification sphereSpecification);
+    List<Sphere> querySphere(SphereSpecification sphereSpecification);
 
-    List<Sphere> sort(Comparator<? super Sphere> comparator);
+    List<Sphere> sortSphere(Comparator<? super Sphere> comparator);
 }
